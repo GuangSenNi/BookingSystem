@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+		<meta charset="utf-8">
+		<link href="custom/assets/css/style1.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</head>
+<body>
+	 <!-----start-main---->
+	 <div class="main">
+		<div class="login-form">
+			<h1 id="bigTitle">Member Login</h1>
+					<div class="head">
+						<img src="custom/assets/images/user.png" alt=""/>
+					</div>
+				<!-----login---->
+				<form id="login">
+						<input type="text" class="text" value="ADMIN" readonly="true">
+						<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+						<div class="submit">
+							<input type="submit" onclick="login()" value="LOGIN" >
+					</div>	
+
+				</form>
+
+			</div>
+			<!--//End-login-form-->
+		</div>
+			 <!-----//end-main---->
+		 		
+<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+<script src="custom/assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+
+function login(){
+	var data1={
+		username: $("#login input:eq(0)").val(),
+		password: $("#login input:eq(1)").val()
+	};
+	$.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "/adminLogin",
+            data:JSON.stringify(data1),
+            success: function (dataResult) {
+            	//alert("login success");
+				window.location.href ='custom/product-grid2.html';
+				//alert("after location");
+			},
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                var failMsg="login fail,status:"+XMLHttpRequest.status+",textStatus:"+textStatus;
+				alert(failMsg);
+			
+            }
+        });
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,775 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--====== Title ======-->
+    <title>HaFood</title>
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!--====== Pe Icon 7 Stroke css ======-->
+    <link rel="stylesheet" href="assets/css/Pe-icon-7-stroke.css">
+
+    <!--====== Ion Icons css ======-->
+    <link rel="stylesheet" href="assets/css/ionicons.min.css">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="assets/css/slick.css">
+
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+
+    <!--====== Nice Select css ======-->
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="assets/css/default.css">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+</head>
+
+<body>
+
+    <!--====== PRELOADER  PART START ======-->
+
+    <div id="preloader">
+        <div id="loader">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!--====== PRELOADER  PART ENDS ======-->
+
+
+
+    <!--====== HEADER  PART START ======-->
+
+    <header class="header-area">
+        <div class="navigation navigation-2 navigation-page fixed-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="assets/images/logo.png" alt="Logo">
+                            </a> <!-- Logo -->
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button> <!-- navbar-toggler -->
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                   
+                                    <li class="nav-item"><a href="product-grid2.html">商品列表</a></li>
+                                    <li class="nav-item"><a class="page-scroll" href="#" onclick="showUnfinishedOrder()">未完成订单</a></li>
+                                    <li class="nav-item"><a class="page-scroll" href="#" onclick="drawPicture()">数据可视化</a></li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <div class="navbar-icon d-none d-sm-block">
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </nav> <!-- navbar -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- navigation -->
+    </header>
+
+    <!--====== HEADER  PART ENDS ======-->
+
+    <!--====== PAGE TITLE  PART START ======-->
+
+    <section class="page-title-area d-flex align-items-center bg_cover" style="background-image: url(assets/images/page-title-bg.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-title-item text-center">
+                        <!--====== change title when click ======-->
+                        <h3 class="title" id="pageTitle">Product Grid</h3>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a>Home</a></li>
+                                <!--====== change title when click ======-->
+                                <li id="secondTitle" class="breadcrumb-item active" aria-current="page">Product Grid</li>
+                            </ol>
+                        </nav>
+                    </div> <!-- page title item -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- row -->
+        <div class="page-title-shape">
+            <img src="assets/images/banner-shape.png" alt="shape">
+        </div> <!-- page title shape -->
+    </section>
+
+    <!--====== PAGE TITLE  PART ENDS ======-->
+
+    <!--====== PRODUCT DETAILS PART START style="display:none;" ======-->
+
+    <section id="productDetail" style="display:none;" class="product-details-area pt-30 pb-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-5">
+                    <div id="bigPicture" class="product-details-thumb mt-35">
+                        <!--====== big picture ======-->
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-7">
+                    <div class="product-details-content mt-30">
+                        <div class="product-details-title">
+                            <h4 class="title" id="productName">Grape</h4>
+                        </div>
+
+                        <div class="product-details-con">
+                            <span id="productPrice">$50.00</span>
+                            <p id="productInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                            <br/>
+                            <form action="/custom/changePic" method="post" enctype="multipart/form-data">
+                                <input id="fileUpload" type="file" name="upload">
+
+                            </form>
+                            <br/>
+                            <input id="changePrice" type="text" placeholder="修改价格"><br/><br/>
+
+                            <input id="changeInfo" type="text" placeholder="修改说明">
+
+                        </div>
+
+                        <div class="product-details-cart d-flex align-items-center">
+
+                            <div class="add-cart">
+                                <a href="javascript:void(0)" onclick="changeProduct()">确认修改</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--====== PRODUCT DETAILS PART ENDS ======-->
+    <!--====== add new food ======-->
+
+    <section id="addNewFood" style="display:none;" class="product-details-area pt-30 pb-90">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-md-7">
+                    <div class="product-details-content mt-30">
+
+                        <div class="product-details-con">
+                            <br/>
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <input id="fileUpload2" type="file" name="upload">
+
+                            </form>
+                            <br/>
+                            <input id="addName" type="text" placeholder="添加名称"><br/><br/>
+
+                            <input id="addPrice" type="text" placeholder="添加价格"><br/><br/>
+
+                            <input id="addInfo" type="text" placeholder="添加简介"><br/><br/>
+
+                            <select id="addKind">
+                                <option value="gaiMa">普通盖码</option>
+                                <option value="xiaoChi">特色小吃</option>
+                                <option value="xiaoChao">精致小炒</option>
+                                <option value="tangMian">水饺汤面</option>
+                            </select>
+
+                        </div>
+
+                        <div class="product-details-cart d-flex align-items-center">
+
+                            <div class="add-cart">
+                                <a href="javascript:void(0)" onclick="AddNewFood()">确认添加</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--====== add new food ENDS ======-->
+
+
+    <!--====== Order PART START ======-->
+
+    <section id="userOrders" class="customer-area customer-about pt-85 pb-145" style="display:none;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center">
+                        <h3 class="title">Orders</h3>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="orderList" class="row customer-active" >
+                <!-- 单条订单 -->
+                <div class="col-lg-6">
+                    <div class="gray-bg mt-30">
+                        <li><b>订单状态:</b>&nbsp; </li>
+                        <li><b>取餐号码:</b>&nbsp; </li>
+                        <li><b>支付金额:</b>&nbsp; </li>
+                        <li><b>下单时间:</b>&nbsp; </li>
+                        <li><b>订单详情:</b>&nbsp; </li>
+                    </div>
+                </div>
+
+            </div> <!-- row -->
+
+        </div> <!-- container -->
+    </section>
+
+    <!--====== Order PART ENDS ======-->
+
+    <!--====== picture start style="width: 600px;height:400px;" class="customer-area customer-about pt-85 pb-145"======-->
+
+    <section id="drawPicture"  class="customer-area customer-about pt-85 pb-145" style="display:none;">
+        <div id="picturePanel" class="container" style="width: 600px;height:400px;">
+        </div> <!-- container -->
+        <div id="picturePanel2" class="container" style="width: 600px;height:400px;">
+        </div>
+        <div id="picturePanel3" class="container" style="width: 600px;height:400px;">
+        </div>
+    </section>
+
+    <!--====== picture PART ENDS ======-->
+
+    <!--====== PRODUCT GRID PART START ======-->
+    <!--====== change title when click ======-->
+    <section id="productGrid" class="product-area product-area-2">
+        <div class="container">
+            <div class="row align-items-center pt-65 pb-20">
+                <div class="col-lg-3 col-md-4">
+                    <div class="product-grid-tab d-flex">
+                        <span>products </span>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8">
+                    <div class="product-grid-select float-left float-md-right">
+                        <ul>                            
+                            <li>
+                                <select id="selectKind">
+								    <option value="all">全部种类</option>
+                                    <option value="gaiMa">普通盖码</option>
+                                    <option value="xiaoChi">特色小吃</option>
+                                    <option value="xiaoChao">精致小炒</option>
+                                    <option value="tangMian">水饺汤面</option>
+
+                                </select>
+                            </li>
+                            <li>
+                                <h3 href="javascript:void(0)" onclick="addFood()">ADD</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div id="productList" class="row">
+                        <!--====== product list  ======-->
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="single-product mt-30">
+                                <img src="assets/images/product-1.jpg" alt="product">
+                                <a href="product-details.html">
+                                    <h6 class="title">Grape</h6>
+                                </a>
+                                <ul>
+                                    <li>$15.00</li>
+									
+                                </ul>
+								<h6><a href="javascript:void(0)" onclick="showRegister() ">add</a></h6>
+                            </div> <!-- single product -->
+                        </div>
+                       
+                    </div> <!-- row -->
+                </div>
+                
+            </div>
+        </div> <!-- container -->
+    </section>
+
+    <!--====== PRODUCT GRID PART ENDS ======-->
+
+    <!--====== BLOG GRID PART START ======-->
+
+    <div class="blog-list-area pt-25 pb-90">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="blog-list-item">
+                        <div class="pagination-area d-flex justify-content-between mt-60 pt-40">
+                            
+                            <!-- <div class="pagination-item-2">
+                                <ul>
+                                    <li><a href="#"><i class="ion ion-ios-arrow-back"></i></a></li>
+                                    <li><a href="#"><i class="ion ion-ios-arrow-forward"></i></a></li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--====== BLOG GRID PART ENDS ======-->
+
+    <!--====== FOOTER PART START ======-->
+
+    <section class="footer-area gray-bg pt-60 pb-85">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-5">
+                    <div class="footer-item-1 mt-30">
+                        <a href="index.html"><img src="assets/images/logo-2.png" alt="logo"></a>
+                        <span>Copyright &copy; 2019.Company name All rights reserved.</span>
+                        <ul>
+                            <li><a href="#">Quality policy</a></li>
+                            <li><a href="#">Customer Policy </a></li>
+                            <li><a href="#">About Us</a></li>
+                        </ul>
+                        <div class="footer-info">
+                            <ul>
+                                <li><i class="ion ion-md-pin"></i> 123 New Design Str, ABC Building, <br> Melbourne, Australia</li>
+                                <li><i class="ion ion-ios-mail"></i>example@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-2 col-md-2 col-sm-4">
+                    <div class="footer-social mt-30">
+                        <h5 class="title">Social Links</h5>
+                        <ul>
+                            <li><a href="https://www.facebook.com/info.tanver">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="skype:live:taherul.islam_1">Skype</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-8">
+                    <div class="footer-item-2 mt-30">
+                        <h5 class="title">Newsletters</h5>
+                        <form action="#">
+                            <div class="input-box mt-25">
+                                <input type="email" placeholder="Your email">
+                            </div>
+                            <div class="input-box mt-25">
+                                <button class="main-btn">Submit <i class="ion ion-ios-send"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--====== FOOTER PART ENDS ======-->
+
+    <!--====== BACK TO TOP ======-->
+    <div class="back-to-top">
+        <a href="">
+            <i class="ion ion-md-arrow-up"></i>
+        </a>
+    </div>
+    <!--====== BACK TO TOP ======-->
+
+
+    <!--====== jquery js ======-->
+    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+
+    <!--====== Slick js ======-->
+    <script src="assets/js/slick.min.js"></script>
+
+    <!--====== Isotope js ======-->
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+
+    <!--====== Images Loaded js ======-->
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+
+    <!--====== Nice Select js ======-->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+
+    <!--====== Ajax Contact js ======-->
+    <script src="assets/js/ajax-contact.js"></script>
+
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+
+    <script src="assets/js/echarts.min.js"></script>
+
+	
+<script type="text/javascript">
+    
+    var chooseId = 0;
+    var productLists = [];
+    function drawPicture() {
+        $("#productDetail").hide();
+        $("#productGrid").hide();
+        $("#drawPicture").show();
+
+        var foodName=[]
+        var price=[]
+        var list2=[]
+        var list3=[]
+        $.each(productLists, function(i, val){
+            foodName.push(val.FoodName);
+            price.push(val.Count)
+            var mp={}
+            mp.value=val.Count
+            mp.name=val.FoodName
+            list2.push(mp)
+            var list4=[]
+            list4.push(val.Price)
+            list4.push(val.Count)
+            list4.push(val.Price*val.Count)
+            list4.push(val.FoodName)
+            list3.push(list4)
+        })
+
+
+        var myChart = echarts.init(document.getElementById('picturePanel'));
+
+        var option = {
+            title: {
+                text: '月销量分类统计'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: foodName
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: price
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+        var myChart2 = echarts.init(document.getElementById('picturePanel2'));
+        myChart2.setOption({
+            title: {
+                text: '月销量扇形图'
+            },
+            series : [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    roseType: 'angle',
+                    radius: '55%',
+                    data:list2
+                }
+            ]
+        })
+
+        var myChart3 = echarts.init(document.getElementById('picturePanel3'));
+        myChart3.setOption({
+            title: {
+                text: '销量与价格的关系'
+            },
+
+            xAxis: {
+                name : '价格',
+                splitLine: {
+                    lineStyle: {
+                        type: 'dashed'
+                    }
+                }
+            },
+            yAxis: {
+                name : '数量',
+                splitLine: {
+                    lineStyle: {
+                        type: 'dashed'
+                    }
+                },
+                scale: true
+            },
+            series: [{
+                data: list3,
+                type: 'scatter',
+                symbolSize: function (data) {
+                    return Math.sqrt(data[2])*3 ;
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        formatter: function (param) {
+                            return param.data[3];
+                        },
+                        position: 'top'
+                    }
+                },
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowColor: 'rgba(120, 36, 50, 0.5)',
+                    shadowOffsetY: 5,
+                    color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                        offset: 0,
+                        color: 'rgb(251, 118, 123)'
+                    }, {
+                        offset: 1,
+                        color: 'rgb(204, 46, 72)'
+                    }])
+                }
+            }]
+        });
+
+    }
+    //添加菜品页面
+    function addFood() {
+        $("#addNewFood").show();
+        $("#productGrid").hide();
+    }
+    //查看商品详情
+    function showDetail(e){
+        $("#productDetail").show();
+        $("#drawPicture").hide();
+        $("#productGrid").hide();
+
+        var productId = $(e).attr("id");
+        chooseId = productId;
+        var product = productLists[productId];
+        //修改相关属性 pageTitle secondTitle bigPicture productInfo productName productPrice
+        //巨坑 使用attr修改src在ie页面无法成功
+        var src="<img  src="+product.Picture+" alt='product details'>";
+        $("#pageTitle").text("Product Details");
+        $("#secondTitle").text("Product Details");
+        $("#bigPicture").html(src);
+        $("#productInfo").text(product.Brief);
+        $("#productName").text(product.FoodName);
+        $("#productPrice").text(product.Price);
+
+    }
+    //新增菜品
+    function AddNewFood() {
+        var formData = new FormData();
+        formData.append("file",$("#fileUpload2")[0].files[0]);
+        formData.append("name",$("#addName").val());
+        formData.append("price",$("#addPrice").val());
+        formData.append("kind",$("#addKind :selected").val());
+        formData.append("detail", $("#addInfo").val());
+        $.ajax({
+            type: "POST",
+            dataType: "formData",
+            processData: false,
+            contentType: false,
+            url: "/custom/addFood",
+            data: formData,
+            success: function (dataResult) {
+                alert("success");
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                var failMsg="AddNewFood fail,status:"+XMLHttpRequest.status+",textStatus:"+textStatus;
+                alert("ok");
+            }
+        });
+    }
+    //修改菜品
+    function changeProduct() {
+        var p=productLists[chooseId];
+        var formData = new FormData();
+        formData.append("file",$("#fileUpload")[0].files[0]);
+        formData.append("name",p.FoodName);
+        formData.append("price",$("#changePrice").val());
+        formData.append("detail", $("#changeInfo").val());
+
+        $.ajax({
+            type: "POST",
+            dataType: "formData",
+            processData: false,
+            contentType: false,
+            url: "/custom/changeProduct",
+            data: formData,
+            success: function (dataResult) {
+                alert("success");
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                var failMsg="changeProduct fail,status:"+XMLHttpRequest.status+",textStatus:"+textStatus;
+                alert("ok");
+            }
+        });
+    }
+
+    //分类查菜品部分
+    function showFoods(dataResult){
+        var content="";
+        $.each(dataResult, function(i, val){
+            content=content+"<div class='col-lg-3 col-md-4 col-sm-6'>"+
+                " <div class='single-product mt-30'>"+
+                "<img src='"+val.Picture+"' alt='product'>"+
+                "<a href='javascript:void(0)'>"+
+                "<h6 id="+i+" class='title' onclick='showDetail(this)'>"+val.FoodName+"</h6></a>"+
+                "<ul><li>￥"+val.Price+"</li></ul></div></div>";
+
+        });
+
+        $("#productList").html(content);
+    }
+
+    function showFoodByKinds(kind){
+        var reqUrl="/custom/searchByKinds/"+kind;
+        //alert(reqUrl);
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: reqUrl,
+            data: {
+                "message":"kind"
+            },
+            success: function (dataResult) {
+                productLists = dataResult;
+                showFoods(dataResult);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                var failMsg="find food by kinds fail,status:"+XMLHttpRequest.status+",textStatus:"+textStatus;
+                alert(failMsg);
+            }
+        });
+    }
+
+    //查看订单
+    function showUnfinishedOrder() {
+        queryOrders("Unfinished Orders","unfinished");
+    }
+    function showAllOrder() {
+        queryOrders("All Orders","all");
+    }
+    function queryOrders(str,cmd){
+        $("#productDetail").hide();
+        $("#addNewFood").hide();
+        $("#productGrid").hide();
+        $("#userOrders").show();
+        $("#pageTitle").text(str);
+        $("#secondTitle").text(str);
+
+        var url="/custom/queryOrders2/"+cmd;
+
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: url,
+            data: "",
+            success: function (dataResult) {
+                var orderContent = "";
+                $.each(dataResult, function(i, val){
+                    orderContent=orderContent+
+                       " <div class='col-lg-6'>"+
+                        "<div class='gray-bg mt-30'>"+
+                        "<li><b>订单状态:</b>&nbsp; <span>"+val.State+"</span></li>"+
+                        "<li><b>取餐号码:</b>&nbsp; <span>"+val.MealCode+"</span></li>"+
+                        "<li><b>支付金额:</b>&nbsp; <span>"+val.Price+"</span></li>"+
+                        "<li><b>订单详情:</b>&nbsp; <span>"+val.Detail+"</span></li>"+
+                        "<li><b>用户手机:</b>&nbsp; <span>"+val.PhoneNumber+"</span></li>"+
+                        "<li><b>下单时间:</b>&nbsp; <span>"+val.StartTime+"</span></li>"+
+                        "<li><a href='javascript:void(0)' onclick='changeWait2Eat(this)'>制作完成</a></li>"+
+                        "<li><a href='javascript:void(0)' onclick='changeFinish(this)'>消费结束</a></li>"+
+                        "</div></div>";
+                });
+                $("#orderList").html(orderContent);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                var failMsg="queryOrders fail,status:"+XMLHttpRequest.status+",textStatus:"+textStatus;
+                alert(failMsg);
+            }
+        });
+    }
+    //修改订单状态
+    function changeWait2Eat(e){
+        var shijian=$(e).parent().prev().find("span").text();
+        var phonenumber=$(e).parent().prev().prev().find("span").text();
+        var order={
+            'name':phonenumber,
+            'time': shijian,
+            'state': '制作完成'
+        };
+        sendOrderState(order);
+    }
+    function changeFinish(e){
+        var shijian=$(e).parent().prev().prev().find("span").text();
+        var phonenumber=$(e).parent().prev().prev().prev().find("span").text();
+        var order={
+            'name':phonenumber,
+            'time': shijian,
+            'state': '消费结束'
+        };
+        sendOrderState(order);
+    }
+    function sendOrderState(order){
+        alert(JSON.stringify(order))
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "/custom/changeOrder",
+            data: JSON.stringify(order),
+            success: function (dataResult) {
+                alert("success");
+
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                var failMsg="sendOrderState fail,status:"+XMLHttpRequest.status+",textStatus:"+textStatus;
+                alert(failMsg);
+            }
+        });
+    }
+
+    $(function(){
+        showFoodByKinds("all");
+        //根据种类显示菜品
+        $('#selectKind').change(function(){
+            //alert($(this).children('option:selected').val());
+            var kind=$(this).children('option:selected').val();//这就是selected的值
+            showFoodByKinds(kind);
+        })
+    });
+
+</script>
+
+</body>
+
+</html>
+
